@@ -54,7 +54,7 @@ input.onButtonPressed(Button.AB, function () {
     if (start == 1) {
         if (X == coin_X) {
             radio.sendMessage(RadioMessage.A_B)
-            coin_X = randint(0, 10)
+            coin_X = randint(0, 9)
             radio.sendNumber(coin_X)
             screen()
         }
@@ -135,24 +135,24 @@ basic.forever(function () {
             if (admin == 1) {
                 basic.showLeds(`
                     . . # . .
-                    . # . . .
+                    . # # . .
                     # # # # #
-                    . # . . .
+                    . # # . .
                     . . # . .
                     `)
             } else {
                 basic.showLeds(`
                     . . # . .
-                    . . . # .
+                    . . # # .
                     # # # # #
-                    . . . # .
+                    . . # # .
                     . . # . .
                     `)
             }
             basic.pause(1000)
             start = 1
             if (admin == 1) {
-                coin_X = randint(0, 10)
+                coin_X = randint(0, 9)
                 radio.sendNumber(coin_X)
             }
             screen()
